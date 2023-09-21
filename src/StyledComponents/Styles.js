@@ -20,8 +20,9 @@ export const colors = {
     pink: "#D434FE",
 }
 
-export const linearGradient = {
-    gradient: `linear-gradient(270deg, #903AFF 0%, #FE34B9 100%)`
+export const mixins = {
+    gradient: `linear-gradient(270deg, #903AFF 0%, #FE34B9 100%)`,
+    borderBottom: `0.002em solid rgba(${colors.white}, 0.2)`
 }
 
 export const values = {
@@ -35,7 +36,7 @@ export const values = {
     text: "1em",
     smallText: ".5em",
     largeText: "2.5em",
-    extraLargeText: "14em",
+    extraLargeText: "5em",
     font: 'Montserrat',
-    bgFont: 'Clash Display',
+    bgFont: 'AC Display Bold',
 }

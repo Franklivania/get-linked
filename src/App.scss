@@ -1,5 +1,7 @@
 @import url('https://fonts.cdnfonts.com/css/montserrat');
-// @import url('./font/clash-display.css');
+@import url('https://db.onlinewebfonts.com/c/91b1db5e4b8cf06a7faa52ca0f9324a8?family=AC+Display+Bold');
+// @import url('./css/clash-display.css');
+// @import './css/style.css';
 
 *,
 *::before,
@@ -42,6 +44,17 @@ $small-radius: .5em;
 $small-text: .7em;
 $text: 1em;
 $large-text: 2.5em;
-$extra-large-text: 14em;
+$extra-large-text: 5em;
 $font: 'Montserrat', sans-serif;
-// $bg-font: 'Clash Display', sans-serif;
+$bg-font: 'AC Display Bold';
+
+::-webkit-scrollbar{
+    width: .3em;
+    background: none;
+}
+
+::-webkit-scrollbar-thumb{
+    @include linearGradient;
+    border-radius: $border-radius;
+    cursor: pointer;
+}

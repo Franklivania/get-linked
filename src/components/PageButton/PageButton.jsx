@@ -14,9 +14,9 @@ const PageContent = styled.main`
     outline: none;
     cursor: pointer;
     display: flex;
-    gap: 1em;
     align-items: center;
     justfy content: center;
+    gap: 1em;
 
     &:hover{
         color: ${colors.pink};

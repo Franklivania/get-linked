@@ -14,11 +14,12 @@ const LandingDisplay = styled.main`
     display: flex;
     flex-direction: column;
     gap: 2em;
-    `
+`
     
 const LandingContent = styled.section`
     width: 100%;
     padding: 0 4em;
+    background: ${colors.dkPurple};
 
 `
 
