@@ -17,7 +17,11 @@ export const colors = {
     white: "#ffffff",
     dkPurple: "#150E28",
     purple: "#903AFF",
-    pink: "#D434FE"
+    pink: "#D434FE",
+}
+
+export const linearGradient = {
+    gradient: `linear-gradient(270deg, #903AFF 0%, #FE34B9 100%)`
 }
 
 export const values = {
@@ -33,4 +37,5 @@ export const values = {
     largeText: "2.5em",
     extraLargeText: "14em",
     font: 'Montserrat',
+    bgFont: 'Clash Display',
 }
