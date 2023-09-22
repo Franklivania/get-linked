@@ -1,0 +1,82 @@
+@import '../../../App.scss';
+
+#privacy{
+    position: relative;
+    width: 100%;
+    height: calc($height * 1.5);
+    padding: 2em 4em;
+    display: flex;
+    // align-items: center;
+    justify-content: space-between;
+    gap: 3em;
+    @include borderBottom;
+
+    article{
+        position: relative;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+
+        h1{
+            font-size: $large-text;
+            font-family: $bg-font;
+            line-height: 1;
+
+            span{
+                color: $pink;
+            }
+        }
+
+        
+        section{
+            position: relative;
+            padding: 3em 5em;
+            background: rgba($white, 0.05);
+            border: 0.02em solid $pink;
+            border-radius: $small-radius;
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+
+            h4{
+                color: $pink;
+            }
+
+            ul{
+                list-style: none;
+                display: flex;
+                flex-direction: column;
+                gap: .5em;
+
+                li{
+                    display: flex;
+                    align-items: center;
+                    gap: 1em;
+
+                    &::before{
+                        content: url(../../../../public//icons/mark.svg);
+                    }
+                }
+            }
+            .read-more{
+                position: relative;
+                margin: 3em 0 0 0;
+                align-self: center;
+                @include linearGradient;
+            }
+        }
+
+    }
+    
+    aside{
+        position: relative;
+        width: 100%;
+
+        #lock{
+            position: absolute;
+            top: 20%;
+            left: 0;
+        }
+    }
+}

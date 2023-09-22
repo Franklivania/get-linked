@@ -9,6 +9,7 @@ import FAQ from "../../components/LandingComponents/FAQ"
 import Timeline from "../../components/LandingComponents/Timeline/Timeline"
 import Prizes from "../../components/LandingComponents/Prizes"
 import Sponsors from "../../components/LandingComponents/Sponsors"
+import PrivacyPolicy from "../../components/LandingComponents/PrivacyPolicy/PrivacyPolicy"
 
 const LandingDisplay = styled.main`
     position: relative;
@@ -35,6 +36,7 @@ export default function Landing () {
             <Timeline />
             <Prizes />
             <Sponsors />
+            <PrivacyPolicy />
         </LandingDisplay>
     )
 }
