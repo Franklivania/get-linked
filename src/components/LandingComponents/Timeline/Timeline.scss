@@ -1,0 +1,69 @@
+@import '../../../App.scss';
+
+#timeline{
+    position: relative;
+    width: 100%;
+    padding: 2em 3em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+    @include borderBottom;
+
+    aside{
+        position: relative;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        margin: 5em 0 0 -7em;
+
+        h3{
+            color: $pink;
+            font-weight: 600;
+        }
+
+        #tm-content{
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 3em;
+            margin: .5em 0;
+
+            &.even{
+                flex-direction: row-reverse;
+            }
+            
+            &.odd{
+                padding: 0 0 0 13.6em;
+            }
+
+            article{
+                width: 25%;
+            }
+
+            span{
+                position: relative;
+                height: calc($wk-height * 0.02);
+                width: calc($wk-width * 0.02);
+                display: grid;
+                place-content: center;
+                border-radius: $radius;
+                font-family: $font;
+                @include linearGradient;
+
+                &::before{
+                    position: absolute;
+                    content: '';
+                    width: 5%;
+                    top: -280%;
+                    left: 45%;
+                    height: calc($wk-height * 0.05);
+                    @include linearGradient;
+                }
+            }
+        }
+    }
+}

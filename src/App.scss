@@ -50,7 +50,7 @@ $bg-font: 'AC Display Bold';
 
 ::-webkit-scrollbar{
     width: .3em;
-    background: none;
+    background: $dk-purple;
 }
 
 ::-webkit-scrollbar-thumb{
