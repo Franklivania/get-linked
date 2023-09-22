@@ -49,9 +49,14 @@ header{
         margin-left: 7em;
         width: 10%;
         @include linearGradient;
-
+        
         &:hover, &.activeLink{
             color: $white;
+            background: linear-gradient( $dk-purple, $dk-purple) padding-box,
+                        linear-gradient(to right, $pink, $purple) border-box;
+            border-radius: $small-radius;
+            border: 0.15em solid transparent;
+            padding: .4em 1em;
         }
     }
 }

@@ -23,7 +23,10 @@ const PageContent = styled.main`
     }
 
     &.activeLink{
-        color: ${colors.pink};
+        background: -webkit-linear-gradient(-70deg, #903AFF 50%, #FE34B9 0%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
     }
 `
 

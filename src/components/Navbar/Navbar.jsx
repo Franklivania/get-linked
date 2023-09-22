@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
 import PageButton from '../PageButton/PageButton'
 import logo from '/images/logo.svg'
-import './Navbar.scss'
 import { Link } from 'react-scroll'
+import './Navbar.scss'
 
 export default function Navbar() {
     const [scrolled, setScrolled] = useState(false)

@@ -1,0 +1,101 @@
+@import '../../App.scss';
+
+#contact{
+    position: relative;
+    width: $width;
+    height: $height;
+    padding: 0 6em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    header{
+        
+        nav{
+            color: $white;
+        }
+    }
+    
+    section{
+        position: relative;
+        width: 100%;
+        color: $white;
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+
+        h2{
+            color: $pink;
+            font-family: $bg-font;
+        }
+
+        menu{
+            position: relative;
+            h4{
+                color: $pink;
+            }
+
+            span{
+                display: flex;
+                align-items: center;
+                gap: 1em;
+            }
+        }
+    }
+
+    form{
+        position: relative;
+        width: 100%;
+        padding: 2em 4em;
+        border-radius: $small-radius;
+        background: rgba($white, 0.05);
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+        margin: 5em 0 0 0;
+
+        aside{
+            color: $pink;
+        }
+
+        #text{
+            position: relative;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            background: rgba($white, 0.02);
+            border: 0.02em solid $white;
+            border-radius: calc($small-radius * 0.5);
+
+            textarea{
+                position: relative;
+                width: 100%;
+                height: calc($wk-height * 0.07);
+                outline: none;
+                resize: none;
+                border: none;
+                border-radius: $small-radius;
+                background: transparent;
+                font-family: $font;
+                font-size: $text;
+                padding: .5em 1em;
+                overflow: hidden;
+                color: $white;
+
+            }
+
+            label{
+                color: $white;
+                padding: .3em .7em;
+            }
+        }
+
+        .submit-btn{
+            position: relative;
+            width: 30%;
+            align-self: center;
+            @include linearGradient;
+        }
+    }
+}
