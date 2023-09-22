@@ -17,7 +17,7 @@
 
     aside{
         position: relative;
-        width: 100%;
+        width: max-content;
         display: flex;
         flex-direction: column;
         gap: 1em;
@@ -45,7 +45,11 @@
             }
 
             article{
-                width: 30%;
+                width: 25%;
+
+                p{
+                    width: 90%;
+                }
             }
 
             span{
@@ -54,8 +58,8 @@
                 width: calc($wk-width * 0.02);
                 display: grid;
                 place-content: center;
-                top: 42%;
-                left: 54%;
+                top: 38%;
+                left: 52%;
                 border-radius: $radius;
                 font-family: $font;
                 @include linearGradient;

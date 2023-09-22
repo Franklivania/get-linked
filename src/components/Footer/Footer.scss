@@ -1,0 +1,85 @@
+@import '../../App.scss';
+
+footer{
+    position: relative;
+    width: $width;
+    padding: 2em 4em;
+    background: $ft-purple;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+
+    aside{
+        position: relative;
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+
+        article{
+            position: relative;
+            width: 40%;
+            display: flex;
+            flex-direction: column;
+
+            img{
+                width: 40%;
+            }
+
+            #terms{
+                margin: 5em 0 0 0;
+                span{
+                    color: $pink;
+                }
+            }
+        }
+
+        menu{
+            position: relative;
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+            gap: .5em;
+
+            h4{
+                color: $pink;
+                margin:  0 0 1em 0;
+            }
+
+            .links{
+                position: relative;
+                padding: .3em 0;
+                // margin: 0 0 .5em 0;
+                cursor: pointer;
+                
+                &:hover{
+                    color: $pink;
+                }
+                
+                .activetoggle{
+                    color: $pink;
+                }
+            }
+            
+            .reg-btn{
+                position: relative;
+                padding: 0;
+                margin: 0 0 .5em 0;
+            }
+
+            p{
+                display: flex;
+                align-items: center;
+                gap: .5em;
+
+                a{
+                    &:hover{
+                        color: $pink;
+                    }
+                }
+            }
+
+        }
+    }
+}
