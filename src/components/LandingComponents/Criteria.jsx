@@ -46,7 +46,6 @@ const CriteriaDisplay = styled.section`
     }
 
     .read-more{
-        width: 28%;
         background: ${mixins.gradient};
     }
 `

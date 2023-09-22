@@ -5,6 +5,7 @@ import Navbar from "../../components/Navbar/Navbar"
 import Idea from "../../components/LandingComponents/Idea"
 import Rules from "../../components/LandingComponents/Rules"
 import Criteria from "../../components/LandingComponents/Criteria"
+import FAQ from "../../components/LandingComponents/FAQ"
 
 const LandingDisplay = styled.main`
     position: relative;
@@ -27,6 +28,7 @@ export default function Landing () {
             <Idea />
             <Rules />
             <Criteria />
+            <FAQ />
         </LandingDisplay>
     )
 }
