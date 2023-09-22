@@ -43,7 +43,7 @@ const IdeaDisplay = styled.section`
 
 export default function Idea() {
   return (
-    <IdeaDisplay>
+    <IdeaDisplay id="overview">
         <img src={idea} alt="idea" />
 
         <img src={prstar} alt="star" className="star st-left"/>

@@ -7,6 +7,7 @@ import Rules from "../../components/LandingComponents/Rules"
 import Criteria from "../../components/LandingComponents/Criteria"
 import FAQ from "../../components/LandingComponents/FAQ"
 import Timeline from "../../components/LandingComponents/Timeline/Timeline"
+import Prizes from "../../components/LandingComponents/Prizes"
 
 const LandingDisplay = styled.main`
     position: relative;
@@ -31,6 +32,7 @@ export default function Landing () {
             <Criteria />
             <FAQ />
             <Timeline />
+            <Prizes />
         </LandingDisplay>
     )
 }

@@ -68,7 +68,7 @@ const FAQDisplay = styled.section`
 
 export default function FAQ() {
   return (
-    <FAQDisplay id="faq">
+    <FAQDisplay id="faqs">
         <aside>
             <h1>
                 Frequently Asked <br />

@@ -29,6 +29,20 @@ header{
         display: flex;
         align-items: center;
         margin-left: auto;
+
+        .links{
+            position: relative;
+            padding: .5em 1em;
+            cursor: pointer;
+
+            &:hover{
+                color: $pink;
+            }
+
+            .activetoggle{
+                color: $pink;
+            }
+        }
     }
 
     .register{

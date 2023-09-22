@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import PageButton from '../PageButton/PageButton'
 import logo from '/images/logo.svg'
 import './Navbar.scss'
+import { Link } from 'react-scroll'
 
 export default function Navbar() {
     const [scrolled, setScrolled] = useState(false)
@@ -32,14 +33,23 @@ export default function Navbar() {
 
             <nav>
                 {navData.map((data, index) => (
-                    <PageButton
+                    <Link 
                         key={index}
-                        title={data.title}
-                        link={data.link}
-                        className={'nav-btn toggle'}
-                    />
+                        // to={data.link}
+                        to={data.link}
+                        smooth={true}
+                        spy={true}
+                        duration={500}
+                        className='nav-btn links'
+                        activeClass='activetoggle'
+                    > {data.title}</Link>
                 ))}
 
+                <PageButton
+                    title={'Contact'}
+                    link={'/contact'}
+                    className={'nav-btn toggle'}
+                />
             </nav>
 
             <PageButton
@@ -54,18 +64,14 @@ export default function Navbar() {
 const navData = [
     {
         title: "Timeline",
-        link: "#timeline"
+        link: "timeline"
     },
     {
         title: "Overview",
-        link: "#overview"
+        link: "overview"
     },
     {
         title: "FAQs",
-        link: "#faqs"
-    },
-    {
-        title: "Contact",
-        link: "/contact"
+        link: "faqs"
     },
 ]
