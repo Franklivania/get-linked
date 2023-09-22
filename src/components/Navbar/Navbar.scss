@@ -9,8 +9,21 @@ header{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    transition: .3s ease;
     z-index: 999;
     @include borderBottom;
+
+    &.scrolled{
+        background: $dk-purple;
+
+        .nav-btn{
+            color: $white;
+
+            &:hover{
+                color: $pink;
+            }
+        }
+    }
     
     nav{
         display: flex;
@@ -26,16 +39,8 @@ header{
         justify-content: center;
         @include linearGradient;
 
-        &:hover,&.activeLink{
+        &:hover, &.activeLink{
             color: $white;
-        }
-    }
-
-    &.scrolled{
-        background: $white;
-
-        .nav-btn{
-            color: $black;
         }
     }
 }

@@ -6,12 +6,13 @@ import styled from 'styled-components'
 import { values } from '../../../StyledComponents/Styles'
 
 const MainImage = styled.section`
-    position: absolute;
-    width: calc(${values.wkWidth} * 0.5);
-    height: calc(${values.wkHeight} * 0.4);
+    position: relative;
+    width: calc(${values.width} * 1);
+    height: 100%;
     heigth: 100%; 
-    bottom: -10%;
+    bottom: -5.3%;
     right: 0;
+    margin:  2em 0 0 0;
 
     h1{
         font-size: ${values.largeText};
@@ -27,7 +28,7 @@ const MainImage = styled.section`
     img{
         position: absolute;
         width: 100%;
-        height: 90%;
+        height: 100%;
         top: 0;
         right: 0;
         object-fit: contain;

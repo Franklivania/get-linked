@@ -9,31 +9,34 @@ import flare from '/images/flare.svg'
 const HeroDisplay = styled.main`
     positon: relative;
     width: ${values.width};
-    height: calc(${values.height} * 0.8);
+    height: ${values.height};
+    padding: 0 4em;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-bottom: ${mixins.borderBottom};
+    border-bottom: 0.02em solid ${colors.borderColor};
     font-family: ${values.font};
+    margin: 0 0 3em 0;
 
-    #flare{
-        position: absolute;
-        width: 50%;
-        top: 0;
-        left: 0;
-    }
-    
     aside{
         position: relative;
-        margin: 15em 0 0 0;
+        margin: 9em 0 0 0;
         width: 100%;
         display: flex;
         flex-direction: column;
         gap: 1em;
 
+        #flare{
+            position: absolute;
+            width: 100%;
+            top: -70%;
+            left: -10%;
+        }
+        
+
         h1{
             position: relative;
-            width: 60%;
+            width: 100%;
             line-height: 1em;
             font-size: ${values.extraLargeText};
             font-weight: 900;
@@ -45,15 +48,12 @@ const HeroDisplay = styled.main`
             #bulb{
                 position: absolute;
                 top: -50%;
-                right: 28%;
+                right: 15%;
             }
+
             #chain{
                 position: absolute;
             }
-        }
-
-        p{
-            width: 35%;
         }
 
         h2{
@@ -70,15 +70,19 @@ const HeroDisplay = styled.main`
         position: relative;
         padding: .5em 2em;
         background: ${mixins.gradient};
+
+        &:hover, &.activeLink{
+            color: ${colors.white};
+        }
     }
 `
 
 export default function Hero() {
   return (
     <HeroDisplay>
-        <img src={flare} alt="flare" id="flare" />
 
         <aside>
+            <img src={flare} alt="flare" id="flare" />
 
             <h1>
                 getlinked Tech Hackathon 
@@ -104,8 +108,6 @@ export default function Hero() {
                 00<small>S</small>
             </h2>
         </aside>
-
-        {/* <img src={avatar} alt="avatar" /> */}
 
         <HeroImage />
     </HeroDisplay>

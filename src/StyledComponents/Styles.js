@@ -18,11 +18,11 @@ export const colors = {
     dkPurple: "#150E28",
     purple: "#903AFF",
     pink: "#D434FE",
+    borderColor: 'hsla(0, 0%, 100%, 0.18)',
 }
 
 export const mixins = {
     gradient: `linear-gradient(270deg, #903AFF 0%, #FE34B9 100%)`,
-    borderBottom: `0.002em solid rgba(${colors.white}, 0.2)`
 }
 
 export const values = {

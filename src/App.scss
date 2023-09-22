@@ -58,3 +58,11 @@ $bg-font: 'AC Display Bold';
     border-radius: $border-radius;
     cursor: pointer;
 }
+
+.App{
+    position: relative;
+    height: $height;
+    width: $width;
+    background: $dk-purple;
+    font-family: $font;
+}
