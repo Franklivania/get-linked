@@ -1,37 +1,25 @@
 import styled from "styled-components"
-import { colors, values } from "../../../StyledComponents/Styles"
-import idea from '/images/idea.svg'
-import prstar from '/images/pr-star.svg'
+import rules from '/images/guide.svg'
+import { colors, values } from "../../StyledComponents/Styles"
 
-const IdeaDisplay = styled.section`
-    postion: relative;
+const RulesDisplay = styled.section`
+    position: relative;
     width: 100%;
-    heigth: ${values.height};
-    padding: 3em 4em;
-    border-bottom: 0.002em solid ${colors.borderColor};
+    padding: 0 4em;
     display: flex;
     align-items: center;
     gap: 6em;
-
-    .star{
-        position: absolute;
-        width: 10%;
-        top: 0;
-    }
-
-    img{
-        width: 100%;
-    }
+    border-bottom: 0.02em solid ${colors.borderColor};
 
     article{
-        width: 100%;
+        postion: relative;
         display: flex;
         flex-direction: column;
         gap: 1em;
 
         h1{
-            font-size: ${values.largeText};
             font-family: ${values.bgFont};
+            font-size: ${values.largeText};
             line-height: 1em;
 
             span{
@@ -41,18 +29,13 @@ const IdeaDisplay = styled.section`
     }
 `
 
-export default function Idea() {
+export default function Rules() {
   return (
-    <IdeaDisplay>
-        <img src={idea} alt="idea" />
-
-        <img src={prstar} alt="star" className="star st-left"/>
-        <img src={prstar} alt="star" className="star st-right"/>
-
+    <RulesDisplay>
         <article>
             <h1>
-                Introduction to getlinked <br />
-                <span>tech Hackathon 1.0</span>
+                Rules and <br />
+                <span>Guidelines</span>
             </h1>
 
             <p>
@@ -64,6 +47,8 @@ export default function Idea() {
                 that's what we're all about!
             </p>
         </article>
-    </IdeaDisplay>
+
+        <img src={rules} alt="rules" id="rules" />
+    </RulesDisplay>
   )
 }

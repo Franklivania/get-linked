@@ -3,6 +3,7 @@ import { colors, values } from "../../StyledComponents/Styles"
 import Hero from "../../components/Hero/Hero"
 import Navbar from "../../components/Navbar/Navbar"
 import Idea from "../../components/LandingComponents/Idea/Idea"
+import Rules from "../../components/LandingComponents/Rules"
 
 const LandingDisplay = styled.main`
     postion: relative;
@@ -23,6 +24,7 @@ export default function Landing () {
             <Navbar />
             <Hero />
             <Idea />
+            <Rules />
         </LandingDisplay>
     )
 }

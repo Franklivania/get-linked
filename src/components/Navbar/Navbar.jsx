@@ -64,7 +64,6 @@ const navData = [
         title: "FAQs",
         link: "#faqs"
     },
-
     {
         title: "Contact",
         link: "/contact"
