@@ -12,7 +12,7 @@ const RulesDisplay = styled.section`
     border-bottom: 0.02em solid ${colors.borderColor};
 
     article{
-        postion: relative;
+        position: relative;
         display: flex;
         flex-direction: column;
         gap: 1em;

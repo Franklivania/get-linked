@@ -15,7 +15,7 @@ const PageContent = styled.main`
     cursor: pointer;
     display: flex;
     align-items: center;
-    justfy content: center;
+    justify-content: center;
     gap: 1em;
 
     &:hover{

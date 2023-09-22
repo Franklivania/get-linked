@@ -2,11 +2,12 @@ import styled from "styled-components"
 import { colors, values } from "../../StyledComponents/Styles"
 import Hero from "../../components/Hero/Hero"
 import Navbar from "../../components/Navbar/Navbar"
-import Idea from "../../components/LandingComponents/Idea/Idea"
+import Idea from "../../components/LandingComponents/Idea"
 import Rules from "../../components/LandingComponents/Rules"
+import Criteria from "../../components/LandingComponents/Criteria"
 
 const LandingDisplay = styled.main`
-    postion: relative;
+    position: relative;
     width: ${values.width};
     overflow-x: hidden;
     font-family: ${values.font};
@@ -25,6 +26,7 @@ export default function Landing () {
             <Hero />
             <Idea />
             <Rules />
+            <Criteria />
         </LandingDisplay>
     )
 }

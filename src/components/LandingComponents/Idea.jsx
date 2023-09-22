@@ -1,12 +1,12 @@
 import styled from "styled-components"
-import { colors, values } from "../../../StyledComponents/Styles"
+import { colors, values } from "../../StyledComponents/Styles"
 import idea from '/images/idea.svg'
 import prstar from '/images/pr-star.svg'
 
 const IdeaDisplay = styled.section`
-    postion: relative;
+    position: relative;
     width: 100%;
-    heigth: ${values.height};
+    height: ${values.height};
     padding: 3em 4em;
     border-bottom: 0.002em solid ${colors.borderColor};
     display: flex;
@@ -32,7 +32,7 @@ const IdeaDisplay = styled.section`
         h1{
             font-size: ${values.largeText};
             font-family: ${values.bgFont};
-            line-height: 1em;
+            line-height: 1;
 
             span{
                 color: ${colors.pink}
