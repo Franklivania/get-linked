@@ -2,7 +2,7 @@ import { useState } from 'react'
 import './FormInput.scss'
 
 
-export default function FormInput({type, title, id, pattern, maxLength, minLength, className}) {
+export default function FormInput({type, title, id, pattern, maxLength, minLength, className, value, onChange}) {
     const [formState, setFormState] = useState({
         [id]: '',
     })
