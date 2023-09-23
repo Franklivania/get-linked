@@ -35,7 +35,6 @@ export default function Navbar() {
                 {navData.map((data, index) => (
                     <Link 
                         key={index}
-                        // to={data.link}
                         to={data.link}
                         smooth={true}
                         spy={true}
@@ -48,7 +47,7 @@ export default function Navbar() {
                 <PageButton
                     title={'Contact'}
                     link={'/contact'}
-                    className={'nav-btn toggle'}
+                    className={'nav-btn contact'}
                 />
             </nav>
 

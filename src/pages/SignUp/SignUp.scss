@@ -1,0 +1,94 @@
+@import '../../App.scss';
+
+#signup{
+    position: relative;
+    width: $width;
+    height: $height;
+    overflow: hidden;
+    padding: 0 4em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    header{
+        color: $white;
+    }
+
+    #sign{
+        position: relative;
+        width: 50%;
+    }
+
+    form{
+        position: relative;
+        width: 100%;
+        padding: 2em 3em;
+        display: flex;
+        flex-direction: column;
+        background: rgba($white, 0.05);
+        border-radius: $small-radius;
+        gap: 1em;
+        color: $white;
+
+        h2{
+            font-family: $bg-font;
+            font-size: $large-text;
+            font-weight: 600;
+            color: $pink;
+        }
+
+        h3{
+            font-weight: 600;
+        }
+
+        p{
+            span{
+                color: $pink;
+            }
+        }
+
+        section{
+            position: relative;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1em;
+
+            span{
+                position: relative;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+
+                input, select{
+                    position: relative;
+                    width: 100%;
+                    padding: .5em 1em;
+                    font-family: $font;
+                    font-size: $text;
+                    border: 0.02em solid $white;
+                    background: transparent;
+                    border-radius: $small-radius;
+                    outline: none;
+                    resize: none;
+                    color: $white;
+
+                    option{
+                        color: $black;
+                    }
+                }
+            }
+        }
+
+        i{
+            color: $pink;
+        }
+
+        .submit-btn{
+            position: relative;
+            width: 100%;
+            @include linearGradient;
+        }
+    }
+}

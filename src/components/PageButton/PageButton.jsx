@@ -3,7 +3,7 @@ import { styled } from "styled-components";
 import { colors, values } from "../../StyledComponents/Styles";
 
 
-const PageContent = styled.main`
+const PageContent = styled.button`
     width: max-content;
     padding: .5em 1em;
     color: ${colors.white};
@@ -16,17 +16,12 @@ const PageContent = styled.main`
     display: flex;
     align-items: center;
     justify-content: center;
+    background: transparent;
+    color: ${colors.white};
     gap: 1em;
 
     &:hover{
         color: ${colors.pink};
-    }
-
-    &.activeLink{
-        background: -webkit-linear-gradient(-70deg, #903AFF 50%, #FE34B9 0%);
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
     }
 `
 
