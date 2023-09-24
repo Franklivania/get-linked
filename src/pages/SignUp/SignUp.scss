@@ -88,7 +88,21 @@
         .submit-btn{
             position: relative;
             width: 100%;
+            padding: .5em 1em;
+            outline: none;
+            border: none;
+            border-radius: $small-radius;
+            color: $white;
+            font-family: $font;
+            font-weight: 500;
+            font-size: $text;
+            cursor: pointer;
+            align-self: center;
             @include linearGradient;
+        }
+
+        .fa-spinner{
+            color: $white;
         }
     }
 }

@@ -1,31 +1,34 @@
 import { useState } from 'react'
+import { useQuery } from '@tanstack/react-query';
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 import Navbar from '../../components/Navbar/Navbar'
 import sign from '/images/login.svg'
 import man from '/icons/man.svg'
 import girl from '/icons/girl.svg'
 import content from '../../../data/SignUp.json'
-import ToggleButton from '../../components/ToggleButton/ToggleButton'
-import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import './SignUp.scss'
 
 export default function SignUp() {
+    const [sending, setSending] = useState(false)
 
     //default form handling
     const [formData, setFormData] = useState({
         team: '',
-        number: '',
+        phone: '',
         email: '',
         project: '',
-        category: '',
-        size: '',
+        category: 0,
+        policy: true,
+        size: 0,
     })
 
     const handleChange = (e) => {
         const { name, value } = e.target
         setFormData({
             ...formData,
-            [name]: value,
+            [name]: name === 'category' ? parseInt(value, 10) : name === 'size' ? parseInt(value, 10) : value,
         })
     }
 
@@ -42,13 +45,66 @@ export default function SignUp() {
 
     if (error) return 'An error has occured while loading the data'
 
+    //handle form submission here
+    function formSubmit(e) {
+        e.preventDefault();
+        setSending(true);
+    
+        const requestData = {
+            email: formData.email,
+            phone_number: formData.phone,
+            team_name: formData.team,
+            group_size: formData.size,
+            project_topic: formData.project,
+            category: formData.category,
+            privacy_policy_accepted: formData.policy,
+        };
+
+        console.log(requestData)
+    
+        const config = {
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        };
+    
+        axios
+            .post('https://backend.getlinked.ai/hackathon/registration', requestData, config)
+            .then((response) => {
+                console.log('Response:', response.data);
+                toast.success(
+                    'You have registered successfully. Keep a look at your mails 😉'
+                );
+                setFormData({
+                    team: '',
+                    phone: '',
+                    email: '',
+                    project: '',
+                    category: 0,
+                    policy: false,
+                    size: 0,
+                });
+                setSending(false);
+            })
+            .catch((error) => {
+                console.error(error);
+                if (error.response && error.response.status === 400) {
+                    toast.error('This email has been used. Please use a different email address.');
+                } else {
+                    toast.error('There was an issue submitting your registration, please try again');
+                }
+                setSending(false);
+            });
+    }
+    
+
     return (
         <main id='signup'>
             <Navbar />
 
             <img src={sign} id='sign' alt="person sitting on a chair facing forward with a laptop on a desk a his side" />
 
-            <form action="">
+            <form onSubmit={formSubmit}>
                 <h2>Register</h2>
 
                 <p>
@@ -65,30 +121,31 @@ export default function SignUp() {
                 <section>
                     <span>
                         <label htmlFor="team">Team's name</label>
-                        <input type="text" name="team" id="team" placeholder='Enter the name of your group' value={formData.team} onChange={handleChange}/>
+                        <input type="text" name="team" id="team" placeholder='Enter the name of your group' value={formData.team} onChange={handleChange} required/>
                     </span>
 
                     <span>
-                        <label htmlFor="number">Phone</label>
-                        <input type="tel" name="number" id="number" placeholder='Enter your phone number' value={formData.number} onChange={handleChange} />
+                        <label htmlFor="phone">Phone</label>
+                        <input type="tel" name="phone" id="phone" placeholder='Enter your phone phone' value={formData.phone} onChange={handleChange}  required/>
                     </span>
 
                     <span>
                         <label htmlFor="email">Email</label>
-                        <input type="email" name="email" id="email" placeholder='Enter your email address' value={formData.email} onChange={handleChange} />
+                        <input type="email" name="email" id="email" placeholder='Enter your email address' value={formData.email} onChange={handleChange}  required/>
                     </span>
 
                     <span>
                         <label htmlFor="project">Project Topic</label>
-                        <input type="text" name="project" id="project" placeholder='What is your group project topic' value={formData.project} onChange={handleChange} />
+                        <input type="text" name="project" id="project" placeholder='What is your group project topic' value={formData.project} onChange={handleChange}  required/>
                     </span>
 
                     <span>
                         <label htmlFor="category">Category</label>
-                        <select name="category" id="category" value={formData.category} onChange={handleChange}>
-                            {data.map((data, idx) => (
-                                <option value="category" key={idx}>
-                                    {data.name}
+                        <select name="category" id="category" value={formData.category} onChange={handleChange} required>
+                            <option value={0}>Select your category</option>
+                            {data.map((category) => (
+                                <option value={category.id} key={category.id}>
+                                    {category.name}
                                 </option>
                             ))}
                         </select>
@@ -96,10 +153,11 @@ export default function SignUp() {
 
                     <span>
                         <label htmlFor="size">Group Size</label>
-                        <select name="size" id="size" value={formData.size} onChange={handleChange} >
-                            {content.size.map((items, idx) => (
-                                <option value="size" key={idx}>
-                                    {items}
+                        <select name="size" id="size" value={formData.size} onChange={handleChange} required>
+                            <option value={0}>Select</option>
+                            {content.size.map((size, idx) => (
+                                <option value={parseInt(size, 10)} key={idx}>
+                                    {size}
                                 </option>
                             ))}
                         </select>
@@ -110,16 +168,19 @@ export default function SignUp() {
                 <i>Please review your registration details before submitting</i>
 
                 <span>
-                    <input type="checkbox" name="checkbox" id="checkbox" />
+                    <input type="checkbox" name="checkbox" id="checkbox" value={formData.policy} onChange={handleChange}  required/>
                     <label htmlFor="checkbox">I agreed with the event terms and conditions  and privacy policy</label>
                 </span>
 
-                <ToggleButton
-                    text={'Register Now'}
-                    className={'submit-btn'}
-                    // onClick={}
-                />
+                {sending ? (
+                    <button type='button' disabled className='submit-btn'>
+                        <i className='fa-solid fa-spinner fa-spin'></i>
+                    </button>
+                ) : (
+                    <input type="submit" value="Register Now" className='submit-btn'/>
+                )}
             </form>
+            <ToastContainer />
         </main>
-  )
+    )
 }
