@@ -8,6 +8,11 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @media screen and (max-width: 900px) {
+        flex-direction: column-reverse;
+        padding: 0 2em;
+    }
     
     header{
         
@@ -23,6 +28,28 @@
                 }
             }
         }
+
+        @media screen and (max-width: 900px) {
+            display: none;
+        }
+    }
+
+    .bk-btn{
+        position: fixed;
+        height: calc($wk-height * 0.022);
+        width: calc($wk-width * 0.02);
+        top: 5%;
+        left: 3%;
+        display: none;
+
+        @media screen and (max-width: 900px) {
+            display: grid;
+            place-content: center;
+            background: linear-gradient( $dk-purple, $dk-purple) padding-box,
+                linear-gradient(to right, $pink, $purple) border-box;
+            border: 0.15em solid transparent;
+            border-radius: $radius;
+        }
     }
     
     section{
@@ -33,6 +60,14 @@
         flex-direction: column;
         gap: 2em;
 
+        @media screen and (max-width: 900px) {
+            flex-direction: column-reverse;
+
+            h2, p{
+                display: none;
+            }
+        }
+
         h2{
             color: $pink;
             font-family: $bg-font;
@@ -40,6 +75,9 @@
 
         menu{
             position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
             h4{
                 color: $pink;
             }
@@ -48,6 +86,17 @@
                 display: flex;
                 align-items: center;
                 gap: 1em;
+            }
+
+            @media screen and (max-width: 900px) {
+                width: 100%;
+                position: relative;
+                align-items: center;
+                margin: 0 0 4em 0;
+
+                h4{
+                    text-align: center;
+                }
             }
         }
     }
@@ -63,8 +112,24 @@
         gap: 2em;
         margin: 5em 0 0 0;
 
+        @media screen and (max-width: 900px) {
+            background: none;
+            padding: 0;
+            gap: 3em;
+        }
+
         aside{
             color: $pink;
+            gap: 1em;
+
+            p{
+                color: $white;
+                display: none;
+
+                @media screen and (max-width: 900px) {
+                    display: block;
+                }
+            }
         }
 
         #form-input{
@@ -175,6 +240,10 @@
             cursor: pointer;
             align-self: center;
             @include linearGradient;
+
+            @media screen and (max-width: 638px) {
+                width: 100%;
+            }
         }
     }
 }

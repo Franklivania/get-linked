@@ -8,6 +8,7 @@ import fb from '/icons/fb.svg'
 import x from '/icons/x.svg'
 import linkedin from '/icons/linkedin.svg'
 import './ContactUs.scss'
+import PageButton from '../../components/PageButton/PageButton'
 
 export default function ContactUs() {
     const [isLoading, setIsLoading] = useState(false)
@@ -67,6 +68,12 @@ export default function ContactUs() {
         <main id='contact'>
             <Navbar />
 
+            <PageButton
+                icon={'fa-solid fa-chevron-left'}
+                link={'/'}
+                className={'bk-btn'}
+            />
+
             <section>
                 <h2>Get in Touch</h2>
 
@@ -104,6 +111,8 @@ export default function ContactUs() {
                 <aside>
                     <h3>Questions or need assistance?</h3>
                     <h3>Let us know  about it!</h3>
+
+                    <p>Email us below to any question related to our event</p>
                 </aside>
 
                 <span id='form-input'>
