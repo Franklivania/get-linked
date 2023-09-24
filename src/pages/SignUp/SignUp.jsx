@@ -9,9 +9,11 @@ import girl from '/icons/girl.svg'
 import content from '../../../data/SignUp.json'
 import axios from 'axios';
 import './SignUp.scss'
+import SuccessModal from '../../components/SuccessModal/SuccessModal';
 
 export default function SignUp() {
     const [sending, setSending] = useState(false)
+    const [isSuccess, setIsSuccess] = useState(false)
 
     //default form handling
     const [formData, setFormData] = useState({
@@ -84,6 +86,7 @@ export default function SignUp() {
                     policy: false,
                     size: 0,
                 });
+                setIsSuccess(true);
                 setSending(false);
             })
             .catch((error) => {
@@ -180,6 +183,7 @@ export default function SignUp() {
                     <input type="submit" value="Register Now" className='submit-btn'/>
                 )}
             </form>
+            {isSuccess && <SuccessModal closeModal={() => setIsSuccess(false)} />}
             <ToastContainer />
         </main>
     )
