@@ -127,7 +127,7 @@
                 border: 0.02em solid $purple;
             }
         }
-        
+
         #text{
             position: relative;
             width: 100%;
@@ -164,6 +164,15 @@
         .submit-btn{
             position: relative;
             width: 30%;
+            padding: .5em 1em;
+            outline: none;
+            border: none;
+            border-radius: $small-radius;
+            color: $white;
+            font-family: $font;
+            font-weight: 500;
+            font-size: $text;
+            cursor: pointer;
             align-self: center;
             @include linearGradient;
         }

@@ -1,10 +1,8 @@
 import { useState } from 'react'
-import { useMutation } from '@tanstack/react-query'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import axios from 'axios'
 import Navbar from '../../components/Navbar/Navbar'
-import ToggleButton from '../../components/ToggleButton/ToggleButton'
 import insta from '/icons/insta.svg'
 import fb from '/icons/fb.svg'
 import x from '/icons/x.svg'
@@ -26,34 +24,34 @@ export default function ContactUs() {
         })
     }
 
-    const { mutate } = useMutation(
-        (data) =>
-            axios.post('https://backend.getlinked.ai/hackathon/contact-form', data, {
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-            }),
-        {
-            onSuccess: () => {
-                toast.success('Form submitted successfully')
-                setFormData({
-                    first: '',
-                    email: '',
-                    message: ''
-                })
-            },
-            onError: (error) => {
-                toast.error('An error occurred while submitting the form')
-                console.error('API Error:', error)
-            },
-        }
-    )
-
     function handleSubmit(e) {
-        e.preventDefault()
-        mutate(formData)
-    }
-      
+        e.preventDefault();
+    
+        const data = JSON.stringify({
+            email: formData.email,
+            first_name: formData.first,
+            message: formData.message,
+        });
+    
+        const config = {
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        };
+    
+        axios
+            .post('https://backend.getlinked.ai/hackathon/contact-form', data, config)
+            .then((response) => {
+                console.log('Response:', response.data);
+                toast.success(
+                    'Your request has been submitted successfully, and we would be in touch with you'
+                );
+            })
+            .catch((error) => {
+                console.error(error);
+                toast.error('There was an error submitting the form');
+            });
+    }    
 
     return (
         <main id='contact'>
@@ -131,11 +129,7 @@ export default function ContactUs() {
                     <textarea name="message" id="message" required value={formData.message} onChange={handleChange}></textarea>
                 </span>
 
-                <ToggleButton
-                    text={'Submit'}
-                    className={'submit-btn'}
-                    onClick={handleSubmit}
-                />
+                <input type="submit" value="Submit" className='submit-btn' />
             </form>
             <ToastContainer />
         </main>

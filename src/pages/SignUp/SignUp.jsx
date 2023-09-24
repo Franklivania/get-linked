@@ -38,7 +38,7 @@ export default function SignUp() {
                 .then((res) => res.data)
     })
 
-    if (isLoading) return <i className="fa-solid fa-circle-notch fa-spin"></i>
+    if (isLoading) return <i className="fa-solid fa-circle-notch fa-spin fa-2x"></i>
 
     if (error) return 'An error has occured while loading the data'
 

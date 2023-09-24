@@ -67,4 +67,12 @@ $bg-font: 'AC Display Bold';
     background: $dk-purple;
     font-family: $font;
     scroll-behavior: smooth;
+
+    .fa-circle-notch{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(50%, 50%);
+        color: $white;
+    }
 }
