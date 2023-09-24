@@ -48,7 +48,7 @@ export default function Rules() {
   return (
     <RulesDisplay>
         <article>
-            <Slide direction="right" cascade triggerOnce>
+            <Slide direction="left" cascade triggerOnce>
                 <h1>
                     Rules and <br />
                     <span>Guidelines</span>

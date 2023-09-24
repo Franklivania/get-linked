@@ -2,7 +2,8 @@ import styled from "styled-components"
 import judges from '/images/judge.svg'
 import data from '../../../data/Criteria.json'
 import ToggleButton from '../ToggleButton/ToggleButton'
-import { colors, mixins, values } from "../../StyledComponents/Styles"
+import { colors, mixins, values, devices } from "../../StyledComponents/Styles"
+import { Slide } from "react-awesome-reveal"
 
 const CriteriaDisplay = styled.section`
     position: relative;
@@ -13,8 +14,17 @@ const CriteriaDisplay = styled.section`
     padding: 2em 4em;
     border-bottom: 0.002em solid ${colors.borderColor};
 
+    @media screen and ${devices.tablet} {
+        flex-direction: column;
+        gap: 2em;
+    }
+
     #judges{
         width: 50%;
+
+        @media screen and ${devices.tablet} {
+            width: 80%;
+        }
     }
 
     aside{
@@ -24,8 +34,12 @@ const CriteriaDisplay = styled.section`
         flex-direction: column;
         gap: 2em;
 
+        @media screen and ${devices.tablet} {
+            text-align: center;
+        }
+
         h1{
-            font-size: ${values.largeText};
+            font-size: clamp(calc(${values.largeText} * 0.7), 5vw, ${values.largeText});
             line-height: 1;
             font-family: ${values.bgFont};
 
@@ -47,6 +61,10 @@ const CriteriaDisplay = styled.section`
 
     .read-more{
         background: ${mixins.gradient};
+
+        @media screen and ${devices.tablet} {
+            align-self: center;
+        }
     }
 `
 
@@ -62,12 +80,14 @@ export default function Criteria() {
             </h1>
 
                 {data.map(items => (
-                    <article key={items}>
-                        <p>
-                            <span>{items.title}:</span>
-                            {items.text}
-                        </p>
-                    </article>
+                    <Slide direction="right" cascade triggerOnce >
+                        <article key={items}>
+                            <p>
+                                <span>{items.title}:</span>
+                                {items.text}
+                            </p>
+                        </article>
+                    </Slide>
                 ))}
 
             <ToggleButton
