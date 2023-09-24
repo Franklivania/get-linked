@@ -19,6 +19,7 @@ const SponsorDisplay = styled.section`
     }
 
     img{
+        width: 100%;
         margin-top: 3em;
     }
 `

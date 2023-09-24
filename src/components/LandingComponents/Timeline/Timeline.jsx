@@ -5,7 +5,7 @@ export default function Timeline() {
   return (
     <section id='timeline'>
         <h1>Timeline</h1>
-        <p>
+        <p id='breakdown'>
             Here is the breakdown of the time we anticipate 
             using for the upcoming event.
         </p>

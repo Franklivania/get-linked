@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { colors, values } from "../../StyledComponents/Styles"
+import { colors, values, devices } from "../../StyledComponents/Styles"
 import think from '/images/think.svg'
 import data from '../../../data/FAQ.json'
 
@@ -11,6 +11,16 @@ const FAQDisplay = styled.section`
     align-items: center;
     gap: 6em;
     border-bottom: 0.002em solid ${colors.borderColor};
+
+    @media screen and ${devices.tablet} {
+        flex-direction: column;
+        gap: 2em;
+        padding: 3em;
+
+        img{
+            width: 80%;
+        }
+    }
 
     img{
         width: 50%;

@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { colors, values } from "../../StyledComponents/Styles"
+import { colors, devices, values } from "../../StyledComponents/Styles"
 import cup from '/images/cup.svg'
 import awards from '/images/Rewards.svg'
 
@@ -28,6 +28,17 @@ const PrizesDisplay = styled.section`
         p{
             width: 60%;
         }
+
+        @media screen and ${devices.tablet} {
+            width: 100%;
+            align-self: center;
+            text-align: center;
+
+            p{
+                width: 100%;
+                text-align: center;
+            }
+        }
     }
 
     aside{
@@ -36,12 +47,22 @@ const PrizesDisplay = styled.section`
         align-items: center;
         justify-content: space-between;
 
+        
         #cup{
             width: 40%;
         }
-
+        
         #awards{
             width: 50%;
+        }
+
+        @media screen and ${devices.tablet} {
+            flex-direction: column;
+            gap: 2em;
+
+            #cup, #awards{
+                width: 95%;
+            }
         }
     }
 `

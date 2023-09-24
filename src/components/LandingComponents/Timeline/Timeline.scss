@@ -15,6 +15,13 @@
         font-family: $bg-font;
     }
 
+    #breakdown{
+        @media screen and (max-width: 1000px) {
+            text-align: center;
+            width:  80% ;
+        }
+    }
+
     aside{
         position: relative;
         width: max-content;
@@ -22,6 +29,20 @@
         flex-direction: column;
         gap: 1em;
         margin: 5em 0 0 -7em;
+
+        @media screen and (max-width: 1000px) {
+            width: 100%;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 3em;
+            gap: 2em;
+        }
+
+        @media screen and (max-width: 639px) {
+            padding: 3em 1em;
+        }
 
         h3{
             color: $pink;
@@ -44,11 +65,45 @@
                 padding: 0 0 0 13.6em;
             }
 
+            @media screen and (max-width: 1000px) {
+                width: 100%;
+                flex-direction: column-reverse;
+                align-items: flex-start;
+                justify-content: flex-start;
+                gap: .3em;
+                padding: 0 0 0 3em;
+                
+                &.even{
+                    flex-direction: column-reverse;
+                }
+                
+                &.odd{
+                    padding: 0;
+                    padding: 0 0 0 3em;
+                }
+            }
+
             article{
                 width: 25%;
 
                 p{
                     width: 90%;
+                }
+
+                @media screen and (max-width: 1000px) {
+                    width: 70%;
+
+                    p{
+                        width: 100%;
+                    }
+                }
+
+                @media screen and (max-width: 639px) {
+                    width: 100%;
+
+                    p{
+                        width: 100%;
+                    }
                 }
             }
 
@@ -63,6 +118,11 @@
                 border-radius: $radius;
                 font-family: $font;
                 @include linearGradient;
+
+                @media screen and (max-width: 1000px) {
+                    top: 80%;
+                    left: 0%;
+                }
 
                 &::before{
                     position: absolute;
