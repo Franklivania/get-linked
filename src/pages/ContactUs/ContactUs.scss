@@ -12,6 +12,7 @@
     @media screen and (max-width: 900px) {
         flex-direction: column-reverse;
         padding: 0 2em;
+        overflow: scroll;
     }
     
     header{

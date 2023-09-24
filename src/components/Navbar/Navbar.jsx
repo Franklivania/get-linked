@@ -3,9 +3,11 @@ import PageButton from '../PageButton/PageButton'
 import logo from '/images/logo.svg'
 import { Link } from 'react-scroll'
 import './Navbar.scss'
+import ToggleButton from '../ToggleButton/ToggleButton'
 
 export default function Navbar() {
     const [scrolled, setScrolled] = useState(false)
+    const [activeNav, setActiveNav] = useState(false)
 
     useEffect(() => {
         function handleScroll() {
@@ -29,6 +31,31 @@ export default function Navbar() {
                 link={'/'}
                 image={logo}
                 className={'nav-btn logo'}
+            />
+
+            <NavContent className={'dk-nav'} />
+            
+            <ToggleButton
+                icon={'fa-solid fa-bars-staggered'}
+                className={`tg-btn`}
+                onClick={() => setActiveNav(!activeNav)}
+            />
+
+            <NavContent 
+                className={`mb-nav ${activeNav ? 'active' : ''}`}
+                closeNav={() => setActiveNav(false)}
+            />
+        </header>
+    )
+}
+
+function NavContent({className, closeNav}) {
+    return(
+        <div className={`nav-content ${className}`}>
+            <ToggleButton
+                icon={'fa-solid fa-x'}
+                className={'cl-nav'}
+                onClick={closeNav}
             />
 
             <nav>
@@ -56,7 +83,7 @@ export default function Navbar() {
                 link={'/signup'}
                 className={'register'}
             />
-        </header>
+        </div>
     )
 }
 

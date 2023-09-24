@@ -24,6 +24,21 @@ header{
             }
         }
     }
+
+    @media screen and (max-width: 1000px) {
+        padding: 1em;
+        .dk-nav{
+            display: none;
+        }
+    }
+
+    .tg-btn{
+        color: $white;
+
+        @media screen and (min-width: 1001px) {
+            display: none;
+        }
+    }
     
     nav{
         display: flex;
@@ -45,6 +60,42 @@ header{
         }
     }
 
+    .mb-nav{
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: $dk-purple;
+        padding: 4em 2em;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1em;
+        transform: translateX(200%);
+        transition:  transform .3s ease-in;
+
+        &.active{
+            transform: translate(0);
+        }
+
+        .cl-nav{
+            display: grid;
+            place-content: center;
+            margin-left: auto;
+        }
+
+        nav{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+
+        }
+        .register{
+            margin-left: 1em;
+            width: max-content;
+        }
+    }
+
     .register{
         margin-left: 7em;
         width: 10%;
@@ -59,5 +110,24 @@ header{
             border-radius: $small-radius;
             color: $white;
         }
+    }
+}
+
+.nav-content{
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    .cl-nav{
+        z-index: 999;
+        display: none;
+        align-items: flex-start;
+        height: calc($wk-height * 0.022);
+        width: calc($wk-width * 0.02);
+        background: linear-gradient( $dk-purple, $dk-purple) padding-box,
+                linear-gradient(to right, $pink, $purple) border-box;
+        border: 0.15em solid transparent;
+        border-radius: $radius;
     }
 }

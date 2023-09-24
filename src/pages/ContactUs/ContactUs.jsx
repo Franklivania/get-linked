@@ -3,12 +3,12 @@ import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import axios from 'axios'
 import Navbar from '../../components/Navbar/Navbar'
+import PageButton from '../../components/PageButton/PageButton'
 import insta from '/icons/insta.svg'
 import fb from '/icons/fb.svg'
 import x from '/icons/x.svg'
 import linkedin from '/icons/linkedin.svg'
 import './ContactUs.scss'
-import PageButton from '../../components/PageButton/PageButton'
 
 export default function ContactUs() {
     const [isLoading, setIsLoading] = useState(false)
