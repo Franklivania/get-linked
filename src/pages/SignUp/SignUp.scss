@@ -9,14 +9,27 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @media screen and (max-width: 900px) {
+        flex-direction: column;
+        padding: 0 2em;
+        overflow: scroll;
+    }
     
     header{
         color: $white;
+
+        @media screen and (max-width: 900px) {
+            display: none;
+        }
     }
 
     #sign{
         position: relative;
         width: 50%;
+        @media screen and (max-width: 900px) {
+            display: none;
+        }
     }
 
     form{
@@ -30,11 +43,26 @@
         gap: 1em;
         color: $white;
 
+        @media screen and (max-width: 900px) {
+            background: none;
+            padding: 1em;
+        }
+
         h2{
             font-family: $bg-font;
             font-size: $large-text;
             font-weight: 600;
             color: $pink;
+        }
+
+        #mb-sign{
+            display: none;
+
+            @media screen and (max-width: 900px) {
+                display: block;
+                width: 50%;
+                align-self: center;
+            }
         }
 
         h3{
@@ -53,6 +81,10 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 1em;
+
+            @media screen and (max-width: 900px) {
+                grid-template-columns: 1fr;
+            }
 
             span{
                 position: relative;

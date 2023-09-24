@@ -110,6 +110,8 @@ export default function SignUp() {
             <form onSubmit={formSubmit}>
                 <h2>Register</h2>
 
+                <img src={sign} id='mb-sign' alt="person sitting on a chair facing forward with a laptop on a desk a his side" />
+
                 <p>
                     Be part of this movement! &nbsp; &nbsp;
                     <span>
