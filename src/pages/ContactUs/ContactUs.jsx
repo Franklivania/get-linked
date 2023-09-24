@@ -10,6 +10,7 @@ import linkedin from '/icons/linkedin.svg'
 import './ContactUs.scss'
 
 export default function ContactUs() {
+    const [isLoading, setIsLoading] = useState(false)
     const [formData, setFormData] = useState({
         first: '',
         email: '',
@@ -26,6 +27,8 @@ export default function ContactUs() {
 
     function handleSubmit(e) {
         e.preventDefault();
+
+        setIsLoading(true)
     
         const data = JSON.stringify({
             email: formData.email,
@@ -46,10 +49,17 @@ export default function ContactUs() {
                 toast.success(
                     'Your request has been submitted successfully, and we would be in touch with you'
                 );
+                setFormData({
+                    first: '',
+                    email: '',
+                    message: '',
+                })
+                setIsLoading(false)
             })
             .catch((error) => {
                 console.error(error);
                 toast.error('There was an error submitting the form');
+                setIsLoading(false)
             });
     }    
 
@@ -129,7 +139,14 @@ export default function ContactUs() {
                     <textarea name="message" id="message" required value={formData.message} onChange={handleChange}></textarea>
                 </span>
 
-                <input type="submit" value="Submit" className='submit-btn' />
+                {isLoading ? (
+                    <button type='button' disabled className='submit-btn'>
+                        <i className='fa-solid fa-spinner fa-spin'></i>
+                    </button>
+                ) : (
+                    <input type="submit" value="Submit" className='submit-btn' />
+                )}
+
             </form>
             <ToastContainer />
         </main>
