@@ -65,7 +65,7 @@ export default function Idea() {
         <img src={prstar} alt="star" className="star st-right"/>
 
         <article>
-            <Slide direction="right" cascade>
+            <Slide direction="right" cascade triggerOnce>
                 <h1>
                     Introduction to getlinked <br />
                     <span>tech Hackathon 1.0</span>
