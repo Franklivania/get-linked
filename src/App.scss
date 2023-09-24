@@ -1,7 +1,5 @@
 @import url('https://fonts.cdnfonts.com/css/montserrat');
 @import url('https://db.onlinewebfonts.com/c/91b1db5e4b8cf06a7faa52ca0f9324a8?family=AC+Display+Bold');
-// @import url('./css/clash-display.css');
-// @import './css/style.css';
 
 *,
 *::before,
@@ -71,8 +69,8 @@ $bg-font: 'AC Display Bold';
     .fa-circle-notch{
         position: absolute;
         top: 50%;
-        left: 50%;
-        transform: translate(50%, 50%);
+        left: 48%;
+        transform: translate(45%, 50%);
         color: $white;
     }
 }
